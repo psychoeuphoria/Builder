@@ -140,9 +140,9 @@
 </ul>
 <p>资源下载地址：<a href="https://pan.baidu.com/s/1IWMzIrosPMhXOSZIjSjuhQ">百度网盘</a>，提取码：<code>qr6t</code></p>
 
-       
+
         
-        
+
     </div>
 
 </div>
@@ -159,7 +159,46 @@
 <custom-toast id="toast"></custom-toast>
 <script src="../r_tamzTkQ7EA-wJxwAXIN8C1Qll9lCJkdsaKZOxlWvc.js"></script>
 <script>
+    function writeText(message) {
+        const textarea = document.createElement("textarea");
+        textarea.style.position = 'fixed';
+        textarea.style.right = '100%';
+        document.body.appendChild(textarea);
+        textarea.value = message;
+        textarea.select();
+        document.execCommand('copy');
+        textarea.remove();
+    }
 
+    function bindAllCodeElements() {
+        const toast = document.getElementById('toast');
+        document.querySelectorAll('code')
+            .forEach(x => {
+                x.addEventListener('click', ev => {
+                    writeText(ev.target.textContent);
+                    toast.setAttribute('message', '已成功复制到剪切板。');
+                });
+            });
+
+    }
+
+    function lazyLoadImages() {
+        const observer = new IntersectionObserver(function (entries) {
+            Array.prototype.forEach.call(entries, function (entry) {
+                if (entry.isIntersecting) {
+                    observer.unobserve(entry.target);
+                    entry.target.src = entry.target.getAttribute("data-src");
+                }
+            });
+        });
+        Array.prototype.forEach.call(document.querySelectorAll('img'), function (image) {
+            if (image.hasAttribute('data-src'))
+                observer.observe(image);
+        });
+    }
+
+    bindAllCodeElements();
+    lazyLoadImages();
 </script>
 </body>
 
