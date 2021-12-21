@@ -8,7 +8,7 @@
     
     <title>Photoshop 进阶：图层混合模式背后的算法 - KingPunch Studio</title>
     
-    <link rel="stylesheet" href="../fI1etIO1w1AWW7Dsm1XjDvY9e_9-upbg4akeg4oRZCM.css">
+    <link rel="stylesheet" href="../Rw1q8F1LNBh6TiTyvobugyvpbajCccz-lDWYsdzaBHQ.css">
     <style>
 
         .table {
@@ -128,12 +128,19 @@
         <h1>Photoshop 进阶：图层混合模式背后的算法</h1>
 
         <h2 id="section">正常和溶解混合模式</h2>
+<p><strong>基础色</strong> ：下图中的黄色。虽然大多数混合模式的图层堆叠顺序无关紧要，但可以将基色视为最底层的颜色。
+<strong>混合</strong> ：这是你添加到基色的颜色。
+<strong>结果色</strong>：这是使用混合模式混合基础颜色和混合颜色后获得的颜色。</p>
+<p><img src="//static.lucidu.cn/images/20211221-hiqhme.jpg" alt="" /></p>
 <h3 id="section-1">正常</h3>
-<p>此模式为在 Photoshop 中创建的所有图层的默认模式，它防止任何颜色混合。此模式的键盘快捷键是 Shift-Option-N（在 PC 上为 Shift+Alt+N）。</p>
+<p>此模式为在 Photoshop 中创建的所有图层的默认模式，它防止任何颜色混合。此模式的键盘快捷键是 <code>Shift-Option-N</code>（在 PC 上为 <code>Shift+Alt+N</code>）。</p>
 <h3 id="section-2">溶解</h3>
-<p>此模式将半透明像素变成点状喷雾（如果你没有任何半透明像素，图像将不会改变）。你可以使用“溶解”使柔和的阴影看起来更粗糙，或者为你在 Photoshop 中绘制的对象添加阴影。键盘快捷键：Shift-Option-I (Shift+Alt+I)。</p>
+<p>此模式将半透明像素变成点状喷雾（如果你没有任何半透明像素，图像将不会改变）。你可以使用“溶解”使柔和的阴影看起来更粗糙，或者为你在 Photoshop 中绘制的对象添加阴影。键盘快捷键：<code>Shift-Option-I</code> (<code>Shift+Alt+I</code>)。</p>
 <p><img src="//static.lucidu.cn/images/20211221-ommrrd.jpg" alt="" /></p>
 <h2 id="section-3">变暗混合模式</h2>
+<h3 id="section-4">变暗</h3>
+<p>在这种模式下，Photoshop 会分析图像中的每个通道，比较基础颜色和混合颜色，并保留最暗的颜色，作为结果颜色（图层顺序无关紧要）。比混合色深的颜色不会改变，但比混合色浅的颜色会替换为结果颜色。此模式在将浅色背景替换为更暗的背景以及修复图像中太亮或曝光过度的区域时很有用。键盘快捷键：<code>Shift-Option-K</code>（在 PC 上为 <code>Shift+Alt+K</code>）。</p>
+<p><img src="//static.lucidu.cn/images/20211221-bqtlhw.jpg" alt="" /></p>
 
        
         
