@@ -229,6 +229,29 @@
 
     const input = document.querySelector('input');
     input.focus();
+
+    document.querySelector('button').addEventListener('click', async ev => {
+
+        let q = input.value;
+        let match = /https:\/\/v.douyin.com\/[\w]+/.exec(q);
+        if (match) {
+            q = match[0];
+        } else {
+            match = /https:\/\/v.kuaishouapp.com\/s\/[\w]+/.exec(q);
+            if (match) {
+                q = match[0];
+            } else {
+                q = '';
+            }
+        }
+        if (q) {
+            const res = await fetch(`https://1784551678897626.cn-hangzhou.fc.aliyuncs.com/2016-08-15/proxy/try.LATEST/func-90e728i3/?v=${q}`)
+            const src = await res.text();
+            writeText(src);
+            document.getElementById('toast').setAttribute('message', '视频已复制，请用浏览器下载');
+        }
+
+    })
     input.addEventListener('keydown', async ev => {
         if (ev.keyCode === 13) {
             ev.preventDefault();
@@ -244,7 +267,6 @@
                     q = '';
                 }
             }
-            console.log(q);
             if (q) {
                 const res = await fetch(`https://1784551678897626.cn-hangzhou.fc.aliyuncs.com/2016-08-15/proxy/try.LATEST/func-90e728i3/?v=${q}`)
                 const src = await res.text();
