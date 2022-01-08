@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>用 Photoshop 制作牛仔字体 - KingPunch Studio</title>
+    <title>Android NDK - KingPunch Studio</title>
     
     <link rel="stylesheet" href="../R0PdhoKCFEmBy40MbC295rXtUg1GlsRhjQqboZ6sZPk.css">
     <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/default.min.css">
@@ -139,29 +139,124 @@
                                         <path d="M9.984 6l6 6-6 6-1.406-1.406 4.594-4.594-4.594-4.594z"></path>
                                     </svg>
                                 </div>
-                                <a href="/topics/photoshop">Photoshop</a>
+                                <a href="/topics/android">Android</a>
                             </li>
 
                         </ul>
                     </div>
-                    <h1>用 Photoshop 制作牛仔字体</h1>
+                    <h1>Android NDK</h1>
 
-                    <img style="width: 100%;margin: 32px 0" alt="用 Photoshop 制作牛仔字体"
-                        src="//static.lucidu.cn/images/20211214-ncppes.jpg">
+                    <img style="width: 100%;margin: 32px 0" alt="Android NDK"
+                        src="//static.lucidu.cn/images/20220108-oibkjp.png">
 
-                    <p>完整制作过程，可通过以下平台在线播放：</p>
+                    <h2 id="section">字符串</h2>
+<p>Java 字符串由 JNI 作为引用类型处理。引用类型不能直接用作原生 C 字符串。 由于 Java 字符串对象是不可变的， JNI 不提供任何修改 Java 字符串内容的函数。</p>
+<h3 id="section-1">新字符串</h3>
+<p>函数 <code>NewString</code> 用于创建 Unicode 字符串，<code>NewStringUTF</code> 用于创建 UTF-8 字符串。</p>
+<pre><code class="language-c">jstring javaString;
+javaString = (*env)-&gt;NewStringUTF(env, &quot;Hello World!&quot;);
+</code></pre>
+<p>在内存溢出的情况下，返回 <code>NULL</code>。</p>
+<h3 id="java-c">将 Java 字符串转换为 C 字符串</h3>
+<p>函数 <code>GetStringChars</code> 可以将 Unicode 字符串和 <code>GetStringUTFChars</code> 可以将 UTF-8 字符串转换为 C 字符串。</p>
+<pre><code class="language-c">const jbyte* str;
+jboolean isCopy;
+  
+str = (*env)-&gt;GetStringUTFChars(env, javaString, &amp;isCopy);
+if (0 != str) {
+    printf(&quot;Java string: %s&quot;, str);
+  
+    if (JNI_TRUE == isCopy) {
+     printf(&quot;C string is a copy of the Java string.&quot;);
+    } else {
+     printf(&quot;C string points to actual string.&quot;);
+    }
+}
+</code></pre>
+<h3 id="section-2">释放字符串</h3>
+<p>通过 <code>GetStringChars</code> 和 <code>GetStringUTFChars</code> 函数获取的 C 字符串需要在使用完后正确释放，否则会发生内存泄漏。</p>
+<pre><code class="language-c">
+(*env)-&gt;ReleaseStringUTFChars(env, javaString, str);
+</code></pre>
+<h2 id="section-3">数组</h2>
+<p>Java 数组由 JNI 作为引用类型处理。</p>
+<h3 id="section-4">新数组</h3>
+<p><code>New&lt;Type&gt;Array</code> 函数可以从本机代码构造新的数组实例，<code>&lt;Type&gt;</code> 为 Int、Char、Boolean 等，例如 <code>NewIntArray</code>。</p>
+<pre><code class="language-c">jintArray javaArray;
+javaArray = (*env)-&gt;NewIntArray(env, 10);
+if (0 != javaArray) {
+    /* You can now use the array. */
+}
+</code></pre>
+<p>与 <code>NewString</code> 函数相同，在内存溢出的情况下，<code>New&lt;Type&gt;Array</code> 函数将返回 <code>NULL</code>。</p>
+<h3 id="section-5">访问数组元素</h3>
+<pre><code class="language-c">// 获取 Java 数组部分的副本作为 C 数组
+jint nativeArray[10];
+(*env)-&gt;GetIntArrayRegion(env, javaArray, 0, 10, nativeArray);
+
+// 提交从 C 数组到 Java 数组的更改
+(*env)-&gt;SetIntArrayRegion(env, javaArray, 0, 10, nativeArray);
+
+// 获取指向 Java 数组元素的直接指针
+jint* nativeDirectArray;
+jboolean isCopy;
+  
+nativeDirectArray = (*env)-&gt;GetIntArrayElements(env, javaArray, &amp;isCopy);
+
+// 释放指向 Java 数组元素的直接指针
+(*env)-&gt;ReleaseIntArrayElements(env, javaArray, nativeDirectArray, 0);
+
+// 基于给定 C 字节数组的新字节缓冲区
+unsigned char* buffer = (unsigned char*) malloc(1024);
+...
+jobject directBuffer;
+directBuffer = (*env)-&gt;NewDirectByteBuffer(env, buffer, 1024);
+
+// 从 Java 字节缓冲区获取字节数组
+unsigned char* buffer;
+buffer = (unsigned char*) (*env)-&gt;GetDirectBufferAddress(env,
+    directBuffer);
+</code></pre>
+<h2 id="section-6">字段</h2>
+<h3 id="id">获取字段 ID</h3>
+<pre><code class="language-java">public class JavaClass {
+    /** Instance field */
+    private String instanceField = &quot;Instance Field&quot;;
+  
+    /** Static field */
+    private static String staticField = &quot;Static Field&quot;;
+  
+    ...
+}
+</code></pre>
+<pre><code class="language-c">// 从对象引用中获取类
+jclass clazz;
+clazz = (*env)-&gt;GetObjectClass(env, instance);
+
+// 获取实例字段的字段 ID
+jfieldID instanceFieldId;
+instanceFieldId = (*env)-&gt;GetFieldID(env, clazz,
+    &quot;instanceField&quot;, &quot;Ljava/lang/String;&quot;);
+
+// 获取静态字段的字段 ID
+jfieldID staticFieldId;
+staticFieldId = (*env)-&gt;GetStaticFieldID(env, clazz,
+    &quot;staticField&quot;, &quot;Ljava/lang/String;&quot;);
+
+// 获取实例字段
+jstring instanceField;
+instanceField = (*env)-&gt;GetObjectField(env, instance, instanceFieldId);
+
+// 获取静态字段
+jstring staticField;
+staticField = (*env)-&gt;GetStaticObjectField(env, clazz, staticFieldId);
+
+</code></pre>
+<h2 id="section-7">更多</h2>
 <ul>
-<li><a href="https://www.bilibili.com/video/BV1sr4y1D7nZ/">B站</a></li>
-<li><a href="https://youtube.com/watch?v=Ch3tSKDjjI8">Youtube</a></li>
+<li><a href="https://developer.android.com/ndk">https://developer.android.com/ndk</a></li>
+<li><a href="https://github.com/tencentyun/qcloud-iot-explorer-sdk-embedded-c/blob/master/include/exports/qcloud_iot_export_error.h">https://github.com/tencentyun/qcloud-iot-explorer-sdk-embedded-c/blob/master/include/exports/qcloud_iot_export_error.h</a></li>
 </ul>
-<h2 id="section">资源</h2>
-<ul>
-<li>渐变：<strong>Tracks.grd</strong> 文件中的 <strong>Gold Rail G2</strong> 渐变。</li>
-<li>字体：<strong>Grobold</strong> 字体。</li>
-<li>画笔：软件内置的沙丘草（Dune Grass）、粉笔 36 像素。<em>如果您使用的最新版的 Photoshop，请选择旧版画笔。</em></li>
-</ul>
-<p>资源下载地址：<a href="https://pan.baidu.com/s/17uoiSR62sqEcPiJev9v9xA">百度网盘</a>，提取码：<code>z48e</code></p>
-<h2 id="section-1">更多</h2>
 
 
                     
