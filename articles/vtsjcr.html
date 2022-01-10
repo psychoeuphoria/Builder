@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Android 服务 - KingPunch Studio</title>
+    <title>Android 应用清单文件 - KingPunch Studio</title>
     
     <link rel="stylesheet" href="../R0PdhoKCFEmBy40MbC295rXtUg1GlsRhjQqboZ6sZPk.css">
     <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/default.min.css">
@@ -144,135 +144,26 @@
 
                         </ul>
                     </div>
-                    <h1>Android 服务</h1>
+                    <h1>Android 应用清单文件</h1>
 
-                    <img style="width: 100%;margin: 32px 0" alt="Android 服务"
-                        src="//static.lucidu.cn/images/20220107-vltniz.png">
+                    <img style="width: 100%;margin: 32px 0" alt="Android 应用清单文件"
+                        src="//static.lucidu.cn/images/20220109-avsalp.png">
 
-                    <p><code>Service</code> 是一种可在后台长时间执行操作的无界面应用组件。</p>
-<p>分三种类型：</p>
-<ul>
-<li>前台</li>
-<li>后台</li>
-<li>绑定</li>
-</ul>
-<p>通过清单文件可将服务声明为私有服务，阻止其他应用访问该服务。<a href="https://developer.android.com/guide/components/services#Declaring">使用清单文件声明服务</a>部分将对此做更详尽的阐述。</p>
-<div class="caution">
-<p><strong>注意 ：</strong> 服务在主线程中运行。如果服务将执行任何 CPU 密集型工作或阻止性操作（例如 MP3 播放或联网），则应通过在服务内创建新线程来完成这项工作。通过使用单独的线程，可以降低发生“应用无响应”(ANR) 错误的风险。</p>
-</div>
-<h2 id="section">基础知识</h2>
-<ul>
-<li><p><code>onStartCommand()</code></p>
-<p>当请求启动服务时，系统会通过调用 <code>startService()</code> 来调用此方法。执行此方法时，服务即会启动并可在后台无限期运行。如果实现此方法，在服务工作完成后，需通过调用 <code>stopSelf()</code> 或 <code>stopService()</code> 来停止服务。（如果只是提供绑定，则无需实现此方法。）</p>
-</li>
-<li><p><code>onBind()</code></p>
-<p>当与服务绑定时，系统会通过调用 <code>bindService()</code> 来调用此方法。在此方法的实现中，必须通过返回 <code>IBinder</code> 提供一个接口，以供客户端用来与服务进行通信。如果不允许绑定，则应返回 <code>null</code>。</p>
-</li>
-<li><p><code>onCreate()</code></p>
-<p>服务首次创建时，系统会（在调用 <code>onStartCommand()</code> 或 <code>onBind()</code> 之前）调用此方法来执行一次性设置程序。如果服务已在运行，则不会调用此方法。</p>
-</li>
-<li><p><code>onDestroy()</code></p>
-<p>当服务将销毁时，系统会调用此方法。服务应通过实现此方法来清理任何资源，如线程、注册的侦听器、接收器等。这是服务接收的最后一个调用。</p>
-</li>
-</ul>
-<p>如果通过调用 <code>bindService()</code> 来创建服务，且未调用 <code>onStartCommand()</code>，则服务只会在绑定时运行。当取消所有绑定后，系统便会将其销毁。</p>
-<p>只有在内存过低且必须回收系统资源以供拥有用户焦点的 <code>Activity</code> 使用时，Android 系统才会停止服务。如果将服务绑定到拥有用户焦点的 <code>Activity</code>，则它其不太可能会终止；如果将服务声明为在前台运行，则其几乎永远不会终止。如果服务已启动并长时间运行，则系统逐渐降低其在后台任务列表中的位置，而服务被终止的概率也会大幅提升—如果服务是启动服务，则必须将其设计为能够妥善处理系统执行的重启。如果系统终止服务，则其会在资源可用时立即重启服务，但这还取决于从 <code>onStartCommand()</code> 返回的值。</p>
-<h3 id="section-1">使用清单文件声明服务</h3>
-<p>如同对 Activity 及其他组件的操作一样，必须在应用的清单文件中声明所有服务。</p>
-<p>如要声明服务，请在 <a href="https://developer.android.com/guide/topics/manifest/application-element"><code>&lt;application&gt;</code></a> 元素中添加 <code>&lt;service&gt;</code> 子元素。下面是示例：</p>
-<pre><code class="language-xml">&lt;manifest ... &gt;
-  ...
-  &lt;application ... &gt;
-      &lt;service android:name=&quot;.ExampleService&quot; /&gt;
-      ...
-  &lt;/application&gt;
-&lt;/manifest&gt;
+                    <h2 id="application"><code>&lt;application&gt;</code></h2>
+<h3 id="androidallowbackup"><code>android:allowBackup</code></h3>
+<p>是否允许应用参与备份和恢复基础架构。如果将此属性设为 <code>false</code>，则永远不会为该应用执行备份或恢复，即使是采用全系统备份方法也不例外（这种备份方法通常会通过 adb 保存所有应用数据）。此属性的默认值为 <code>true</code>。</p>
+<h3 id="androidusescleartexttraffic"><code>android:usesCleartextTraffic</code></h3>
+<p>指示应用是否打算使用明文网络流量，如明文 HTTP。对于目标 API 级别为 27 或更低级别的应用，默认值为 &quot;true&quot;。对于目标 API 级别为 28 或更高级别的应用，默认值为 &quot;false&quot;。</p>
+<h2 id="uses-permission"><code>&lt;uses-permission&gt;</code></h2>
+<h3 id="androidmaxsdkversion"><code>android:maxSdkVersion</code></h3>
+<p>此权限应授予应用的最高 API 级别。如果从某个 API 级别开始不再需要应用所需的权限，则设置此属性非常有用。</p>
+<pre><code class="language-xml">&lt;uses-permission
+     android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot;
+     android:maxSdkVersion=&quot;18&quot; /&gt;
 </code></pre>
-<h2 id="section-2">创建启动服务</h2>
-<p>例如，假设某 Activity 需要将一些数据保存到在线数据库中。该 Activity 可以启动一个协同服务，并通过向 <code>startService()</code> 传递一个 Intent，为该服务提供要保存的数据。服务会通过 <code>onStartCommand()</code> 接收 Intent，连接到互联网并执行数据库事务。事务完成后，服务将自行停止并销毁。</p>
-<pre><code class="language-java">public class HelloService extends Service {
-  private Looper serviceLooper;
-  private ServiceHandler serviceHandler;
-
-  // Handler that receives messages from the thread
-  private final class ServiceHandler extends Handler {
-      public ServiceHandler(Looper looper) {
-          super(looper);
-      }
-      @Override
-      public void handleMessage(Message msg) {
-          // Normally we would do some work here, like download a file.
-          // For our sample, we just sleep for 5 seconds.
-          try {
-              Thread.sleep(5000);
-          } catch (InterruptedException e) {
-              // Restore interrupt status.
-              Thread.currentThread().interrupt();
-          }
-          // Stop the service using the startId, so that we don't stop
-          // the service in the middle of handling another job
-          stopSelf(msg.arg1);
-      }
-  }
-
-  @Override
-  public void onCreate() {
-    // Start up the thread running the service. Note that we create a
-    // separate thread because the service normally runs in the process's
-    // main thread, which we don't want to block. We also make it
-    // background priority so CPU-intensive work doesn't disrupt our UI.
-    HandlerThread thread = new HandlerThread(&quot;ServiceStartArguments&quot;,
-            Process.THREAD_PRIORITY_BACKGROUND);
-    thread.start();
-
-    // Get the HandlerThread's Looper and use it for our Handler
-    serviceLooper = thread.getLooper();
-    serviceHandler = new ServiceHandler(serviceLooper);
-  }
-
-  @Override
-  public int onStartCommand(Intent intent, int flags, int startId) {
-      Toast.makeText(this, &quot;service starting&quot;, Toast.LENGTH_SHORT).show();
-
-      // For each start request, send a message to start a job and deliver the
-      // start ID so we know which request we're stopping when we finish the job
-      Message msg = serviceHandler.obtainMessage();
-      msg.arg1 = startId;
-      serviceHandler.sendMessage(msg);
-
-      // If we get killed, after returning from here, restart
-      return START_STICKY;
-  }
-
-  @Override
-  public IBinder onBind(Intent intent) {
-      // We don't provide binding, so return null
-      return null;
-  }
-
-  @Override
-  public void onDestroy() {
-    Toast.makeText(this, &quot;service done&quot;, Toast.LENGTH_SHORT).show();
-  }
-}
-</code></pre>
-<p>请注意，<code>onStartCommand()</code> 方法必须返回整型数。整型数是一个值，用于描述系统应如何在系统终止服务的情况下继续运行服务。从 onStartCommand() 返回的值必须是以下常量之一：</p>
+<h2 id="section">更多</h2>
 <ul>
-<li><p><code>START_NOT_STICKY</code></p>
-<p>如果系统在 <code>onStartCommand()</code> 返回后终止服务，则除非有待传递的挂起 Intent，否则系统不会重建服务。</p>
-</li>
-<li><p><code>START_STICKY</code></p>
-<p>如果系统在 <code>onStartCommand()</code> 返回后终止服务，则其会重建服务并调用 <code>onStartCommand()</code>，但不会重新传递最后一个 Intent。相反，除非有挂起 Intent 要启动服务，否则系统会调用包含空 Intent 的 onStartCommand()。</p>
-</li>
-<li><p><code>START_REDELIVER_INTENT</code></p>
-<p>如果系统在 <code>onStartCommand()</code> 返回后终止服务，则其会重建服务，并通过传递给服务的最后一个 Intent 调用 <code>onStartCommand()</code>。所有挂起 Intent 均依次传递。</p>
-</li>
-</ul>
-<h2 id="section-3">更多</h2>
-<ul>
-<li><a href="https://developer.android.com/guide/components/services">https://developer.android.com/guide/components/services</a></li>
-<li><a href="https://developer.android.com/guide/topics/manifest/service-element">https://developer.android.com/guide/topics/manifest/service-element</a></li>
-<li><a href="https://developer.android.com/guide/topics/ui/notifiers/notifications">https://developer.android.com/guide/topics/ui/notifiers/notifications</a></li>
+<li><a href="https://developer.android.com/guide/topics/manifest/application-element">https://developer.android.com/guide/topics/manifest/application-element</a></li>
 </ul>
 
 

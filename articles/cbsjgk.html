@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Android 服务 - KingPunch Studio</title>
+    <title>Adobe Premiere Pro 硬件要求 - KingPunch Studio</title>
     
     <link rel="stylesheet" href="../R0PdhoKCFEmBy40MbC295rXtUg1GlsRhjQqboZ6sZPk.css">
     <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/default.min.css">
@@ -139,140 +139,63 @@
                                         <path d="M9.984 6l6 6-6 6-1.406-1.406 4.594-4.594-4.594-4.594z"></path>
                                     </svg>
                                 </div>
-                                <a href="/topics/android">Android</a>
+                                <a href="/topics/">视频</a>
                             </li>
 
                         </ul>
                     </div>
-                    <h1>Android 服务</h1>
+                    <h1>Adobe Premiere Pro 硬件要求</h1>
 
-                    <img style="width: 100%;margin: 32px 0" alt="Android 服务"
-                        src="//static.lucidu.cn/images/20220107-vltniz.png">
+                    <img style="width: 100%;margin: 32px 0" alt="Adobe Premiere Pro 硬件要求"
+                        src="//static.lucidu.cn/images/20220110-hevpkm.png">
 
-                    <p><code>Service</code> 是一种可在后台长时间执行操作的无界面应用组件。</p>
-<p>分三种类型：</p>
+                    <h2 id="cpu">CPU</h2>
+<p>处理器（或 CPU）是 Premiere Pro 工作站最重要的部件之一。 虽然 GPU 加速越来越受欢迎，但 CPU 通常会对整体系统性能产生更大的影响。 但是，请注意，理论上更强大的 CPU 并不总是更好，因为 Premiere Pro 可以有效利用的内核数量是有限的。 这就是为什么昂贵的双 Xeon 工作站不再是 Premiere Pro 好的选择的原因之一。 凭借现代 CPU 中可用的核心数量，相对标准的工作站 CPU 将以低得多的成本轻松胜过双 Xeon。</p>
+<h3 id="cpu-premiere-pro">哪种 CPU 最适合 Premiere Pro？</h3>
+<p>适合 Premiere Pro 的最佳 CPU 很大程度上取决于用途和预算。 对于主要使用 H.264 和 H.265 (HEVC) 的工作负载，英特尔的 Core i9 12900K 做得很好——这要归功于其内置的 QuickSync 功能——而且价格非常合理。 另一方面，在处理 RED 素材时，AMD 的 Threadripper Pro 3975WX 和 3995WX 位居榜首。</p>
+<h3 id="cpu-premiere-pro-1">CPU 核心越多 Premiere Pro 会越快吗？</h3>
+<p>在一定程度上，核心越多性能应该越好，尽管导出视频比实时播放更是如此。 但是，Premiere Pro 不能完美地利用更多的核心数量，因此双 Xeon 工作站等极高核心数量的系统往往比单 CPU 工作站的性能更差，因为它们单个核心的性能较低。</p>
+<p>因此，我们强烈建议你直接查看不同 CPU 的基准性能，而不是尝试仅根据核心数（或任何其他规格）来选择 CPU。</p>
+<h3 id="intel-amd-cpu-premiere-pro">Intel 还是 AMD CPU 更适合 Premiere Pro？</h3>
+<p>目前，在大多数情况下，AMD 在 Premiere Pro 中的实时播放和导出性能方面更强。 然而，英特尔的酷睿处理器（尤其是新的第 12 代型号）是不错的选择，因为它们的性能接近价格相似的 AMD 锐龙 CPU，但包括可用于处理 H.264 和 HEVC 媒体的快速同步，而不是依赖于 GPU 来完成这些任务。 这释放了显卡的性能。</p>
+<h2 id="gpu">显卡（GPU）</h2>
+<p>Adobe 在过去几年中越来越多地使用 GPU，而 Premiere Pro 尤其受益于现代 GPU。如果剪辑中包含依赖于 GPU 加速的效果，拥有显卡变得越来越重要。</p>
+<p>此外，自 Premiere Pro 14.2 版以来，Adobe 在编码（导出） H.264/H.265 时增加了对基于 GPU 的硬件加速的支持，这可以将导出时间减少多达 5 倍！ 从 Premiere Pro 14.5 开始，H.264/HEVC 解码（主要用于实时播放）现在也能够利用 GPU。 这可以在使用这些编解码器时提供明显更流畅的编辑体验。</p>
+<h3 id="gpu-premiere-pro">哪种 GPU（显卡）最适合 Premiere Pro？</h3>
+<p>哪种显卡最好取决于使用了多少 GPU 加速效果以及是否经常导出 H.264/HEVC。 对于大多数用户来说，即使你回到上一代到 2000 系列卡，各种 NVIDIA GPU 之间也没有太大区别。 但是，如果使用的 GPU 加速效果越多，希望能够以越快的速度导出到 H.264/HEVC，使用更高端显卡的好处就越大。</p>
+<h3 id="premiere-pro-vram">Premiere Pro 需要多少 VRAM（视频内存）？</h3>
+<p>一个帧需要多少 GPU 内存才能在 GPU 上进行处理取决于位深度和编码，但是你可以使用一个公式来计算使用 GPU 加速所需的内存大小 .</p>
+<p>所需的显卡内存大约等于：高 × 宽/13.107。</p>
+<p>如果剪辑太大且超过了可用的 GPU 内存量，Premiere 将回退到纯软件渲染。  以下是一些常见图像尺寸所需的 GPU RAM 示例。</p>
+<p>一个 4096 × 2160 像素的 4K 视频帧大约需要 675 MB。</p>
+<p>佳能 T2i 的静止图像，5184 × 3456 像素，大约需要 1.37 GB，超过了某些笔记本电脑系统上可用的 1 GB。</p>
+<p>一个 8K 视频帧，8192 × 4320 像素，大约需要 2.7 GB。</p>
+<p>佳能 EOS 5DS 的静止图像，8688 × 5792 像素，需要大约 3.84 GB，因此你需要一个至少 4 GB 的显卡。</p>
+<p>通常，我们会从一个静止图像过渡到另一个静止图像，这会使需求翻倍。 在组合多个大型静止图像或多个 8K 视频剪辑时，即使在功能强大的系统上，也很容易耗尽所有可用的 GPU RAM。</p>
+<p>以下是基于序列分辨率的 VRAM：</p>
+<table>
+<thead>
+<tr>
+<th>序列分辨率</th>
+<th>1080p</th>
+<th>4K</th>
+<th>6K</th>
+<th>8K+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最小 VRAM</td>
+<td>4GB</td>
+<td>6GB</td>
+<td>8GB</td>
+<td>10GB+</td>
+</tr>
+</tbody>
+</table>
+<h2 id="section">更多</h2>
 <ul>
-<li>前台</li>
-<li>后台</li>
-<li>绑定</li>
-</ul>
-<p>通过清单文件可将服务声明为私有服务，阻止其他应用访问该服务。<a href="https://developer.android.com/guide/components/services#Declaring">使用清单文件声明服务</a>部分将对此做更详尽的阐述。</p>
-<div class="caution">
-<p><strong>注意 ：</strong> 服务在主线程中运行。如果服务将执行任何 CPU 密集型工作或阻止性操作（例如 MP3 播放或联网），则应通过在服务内创建新线程来完成这项工作。通过使用单独的线程，可以降低发生“应用无响应”(ANR) 错误的风险。</p>
-</div>
-<h2 id="section">基础知识</h2>
-<ul>
-<li><p><code>onStartCommand()</code></p>
-<p>当请求启动服务时，系统会通过调用 <code>startService()</code> 来调用此方法。执行此方法时，服务即会启动并可在后台无限期运行。如果实现此方法，在服务工作完成后，需通过调用 <code>stopSelf()</code> 或 <code>stopService()</code> 来停止服务。（如果只是提供绑定，则无需实现此方法。）</p>
-</li>
-<li><p><code>onBind()</code></p>
-<p>当与服务绑定时，系统会通过调用 <code>bindService()</code> 来调用此方法。在此方法的实现中，必须通过返回 <code>IBinder</code> 提供一个接口，以供客户端用来与服务进行通信。如果不允许绑定，则应返回 <code>null</code>。</p>
-</li>
-<li><p><code>onCreate()</code></p>
-<p>服务首次创建时，系统会（在调用 <code>onStartCommand()</code> 或 <code>onBind()</code> 之前）调用此方法来执行一次性设置程序。如果服务已在运行，则不会调用此方法。</p>
-</li>
-<li><p><code>onDestroy()</code></p>
-<p>当服务将销毁时，系统会调用此方法。服务应通过实现此方法来清理任何资源，如线程、注册的侦听器、接收器等。这是服务接收的最后一个调用。</p>
-</li>
-</ul>
-<p>如果通过调用 <code>bindService()</code> 来创建服务，且未调用 <code>onStartCommand()</code>，则服务只会在绑定时运行。当取消所有绑定后，系统便会将其销毁。</p>
-<p>只有在内存过低且必须回收系统资源以供拥有用户焦点的 <code>Activity</code> 使用时，Android 系统才会停止服务。如果将服务绑定到拥有用户焦点的 <code>Activity</code>，则它其不太可能会终止；如果将服务声明为在前台运行，则其几乎永远不会终止。如果服务已启动并长时间运行，则系统逐渐降低其在后台任务列表中的位置，而服务被终止的概率也会大幅提升—如果服务是启动服务，则必须将其设计为能够妥善处理系统执行的重启。如果系统终止服务，则其会在资源可用时立即重启服务，但这还取决于从 <code>onStartCommand()</code> 返回的值。</p>
-<h3 id="section-1">使用清单文件声明服务</h3>
-<p>如同对 Activity 及其他组件的操作一样，必须在应用的清单文件中声明所有服务。</p>
-<p>如要声明服务，请在 <a href="https://developer.android.com/guide/topics/manifest/application-element"><code>&lt;application&gt;</code></a> 元素中添加 <code>&lt;service&gt;</code> 子元素。下面是示例：</p>
-<pre><code class="language-xml">&lt;manifest ... &gt;
-  ...
-  &lt;application ... &gt;
-      &lt;service android:name=&quot;.ExampleService&quot; /&gt;
-      ...
-  &lt;/application&gt;
-&lt;/manifest&gt;
-</code></pre>
-<h2 id="section-2">创建启动服务</h2>
-<p>例如，假设某 Activity 需要将一些数据保存到在线数据库中。该 Activity 可以启动一个协同服务，并通过向 <code>startService()</code> 传递一个 Intent，为该服务提供要保存的数据。服务会通过 <code>onStartCommand()</code> 接收 Intent，连接到互联网并执行数据库事务。事务完成后，服务将自行停止并销毁。</p>
-<pre><code class="language-java">public class HelloService extends Service {
-  private Looper serviceLooper;
-  private ServiceHandler serviceHandler;
-
-  // Handler that receives messages from the thread
-  private final class ServiceHandler extends Handler {
-      public ServiceHandler(Looper looper) {
-          super(looper);
-      }
-      @Override
-      public void handleMessage(Message msg) {
-          // Normally we would do some work here, like download a file.
-          // For our sample, we just sleep for 5 seconds.
-          try {
-              Thread.sleep(5000);
-          } catch (InterruptedException e) {
-              // Restore interrupt status.
-              Thread.currentThread().interrupt();
-          }
-          // Stop the service using the startId, so that we don't stop
-          // the service in the middle of handling another job
-          stopSelf(msg.arg1);
-      }
-  }
-
-  @Override
-  public void onCreate() {
-    // Start up the thread running the service. Note that we create a
-    // separate thread because the service normally runs in the process's
-    // main thread, which we don't want to block. We also make it
-    // background priority so CPU-intensive work doesn't disrupt our UI.
-    HandlerThread thread = new HandlerThread(&quot;ServiceStartArguments&quot;,
-            Process.THREAD_PRIORITY_BACKGROUND);
-    thread.start();
-
-    // Get the HandlerThread's Looper and use it for our Handler
-    serviceLooper = thread.getLooper();
-    serviceHandler = new ServiceHandler(serviceLooper);
-  }
-
-  @Override
-  public int onStartCommand(Intent intent, int flags, int startId) {
-      Toast.makeText(this, &quot;service starting&quot;, Toast.LENGTH_SHORT).show();
-
-      // For each start request, send a message to start a job and deliver the
-      // start ID so we know which request we're stopping when we finish the job
-      Message msg = serviceHandler.obtainMessage();
-      msg.arg1 = startId;
-      serviceHandler.sendMessage(msg);
-
-      // If we get killed, after returning from here, restart
-      return START_STICKY;
-  }
-
-  @Override
-  public IBinder onBind(Intent intent) {
-      // We don't provide binding, so return null
-      return null;
-  }
-
-  @Override
-  public void onDestroy() {
-    Toast.makeText(this, &quot;service done&quot;, Toast.LENGTH_SHORT).show();
-  }
-}
-</code></pre>
-<p>请注意，<code>onStartCommand()</code> 方法必须返回整型数。整型数是一个值，用于描述系统应如何在系统终止服务的情况下继续运行服务。从 onStartCommand() 返回的值必须是以下常量之一：</p>
-<ul>
-<li><p><code>START_NOT_STICKY</code></p>
-<p>如果系统在 <code>onStartCommand()</code> 返回后终止服务，则除非有待传递的挂起 Intent，否则系统不会重建服务。</p>
-</li>
-<li><p><code>START_STICKY</code></p>
-<p>如果系统在 <code>onStartCommand()</code> 返回后终止服务，则其会重建服务并调用 <code>onStartCommand()</code>，但不会重新传递最后一个 Intent。相反，除非有挂起 Intent 要启动服务，否则系统会调用包含空 Intent 的 onStartCommand()。</p>
-</li>
-<li><p><code>START_REDELIVER_INTENT</code></p>
-<p>如果系统在 <code>onStartCommand()</code> 返回后终止服务，则其会重建服务，并通过传递给服务的最后一个 Intent 调用 <code>onStartCommand()</code>。所有挂起 Intent 均依次传递。</p>
-</li>
-</ul>
-<h2 id="section-3">更多</h2>
-<ul>
-<li><a href="https://developer.android.com/guide/components/services">https://developer.android.com/guide/components/services</a></li>
-<li><a href="https://developer.android.com/guide/topics/manifest/service-element">https://developer.android.com/guide/topics/manifest/service-element</a></li>
-<li><a href="https://developer.android.com/guide/topics/ui/notifiers/notifications">https://developer.android.com/guide/topics/ui/notifiers/notifications</a></li>
+<li><a href="https://www.pugetsystems.com/recommended/Recommended-Systems-for-Adobe-Premiere-Pro-143/Hardware-Recommendations">https://www.pugetsystems.com/recommended/Recommended-Systems-for-Adobe-Premiere-Pro-143/Hardware-Recommendations</a></li>
 </ul>
 
 
