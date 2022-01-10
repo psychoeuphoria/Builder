@@ -149,7 +149,8 @@
                     <img style="width: 100%;margin: 32px 0" alt="怎么开设抖音全球店铺（TikTok Shop 跨境电商）？"
                         src="//static.lucidu.cn/images/20220106-gaaewh.jpg">
 
-                    <h2 id="section">开设店铺</h2>
+                    <nav><ul><li><a href='#section'>开设店铺</a><ul><li><a href='#section-1'>商品类目</a></li><li><a href='#section-2'>物流渠道</a></li><li><a href='#section-3'>流量工具</a></li><li><a href='#section-4'>入驻门槛</a></li><li><a href='#section-5'>注册</a></li></ul></li><li><a href='#tiktok'>设置 TikTok 店铺资料的最佳实践</a></li><li><a href='#section-6'>商品列表的最佳实践</a></li><li><a href='#section-7'>更多</a></li></ul></nav>
+<h2 id="section">开设店铺</h2>
 <h3 id="section-1">商品类目</h3>
 <p>全品类，覆盖3C数码、美妆个护、服装配饰、鞋靴箱包、家具生活、毛绒玩具、节日礼品等等。</p>
 <h3 id="section-2">物流渠道</h3>
@@ -306,6 +307,31 @@
                 hljs.highlightElement(el);
             });
         });
+
+
+
+        const topbarRenderer = document.querySelector('.topbar-renderer');
+        let yOffset;
+
+
+        function scroll() {
+            const y = window.pageYOffset;
+            if (yOffset > y) {
+                topbarRenderer.className = "topbar-renderer in";
+            } else if (y > yOffset) {
+                // (y <= 48 && y != 0) ||
+                topbarRenderer.className = "topbar-renderer out";
+            }
+            yOffset = y;
+        }
+
+        window.addEventListener('scroll', evt => {
+            scroll();
+        });
+        window.addEventListener('hashchange', evt => {
+            scroll();
+        })
+        scroll();
     </script>
 </body>
 

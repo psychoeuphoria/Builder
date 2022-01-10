@@ -149,7 +149,8 @@
                     <img style="width: 100%;margin: 32px 0" alt="Adobe Premiere Pro 硬件要求"
                         src="//static.lucidu.cn/images/20220110-hevpkm.png">
 
-                    <h2 id="cpu">CPU</h2>
+                    <nav><ul><li><a href='#cpu'>CPU</a><ul><li><a href='#cpu-premiere-pro'>哪种 CPU 最适合 Premiere Pro？</a></li><li><a href='#cpu-premiere-pro-1'>CPU 核心越多 Premiere Pro 会越快吗？</a></li><li><a href='#intel-amd-cpu-premiere-pro'>Intel 还是 AMD CPU 更适合 Premiere Pro？</a></li></ul></li><li><a href='#gpu'>显卡（GPU）</a><ul><li><a href='#gpu-premiere-pro'>哪种 GPU（显卡）最适合 Premiere Pro？</a></li><li><a href='#premiere-pro-vram'>Premiere Pro 需要多少 VRAM（视频内存）？</a></li><li><a href='#gpu-premiere-pro-1'>多个 GPU 会提高 Premiere Pro 的性能吗？</a></li></ul></li><li><a href='#section'>更多</a></li></ul></nav>
+<h2 id="cpu">CPU</h2>
 <p>处理器（或 CPU）是 Premiere Pro 工作站最重要的部件之一。 虽然 GPU 加速越来越受欢迎，但 CPU 通常会对整体系统性能产生更大的影响。 但是，请注意，理论上更强大的 CPU 并不总是更好，因为 Premiere Pro 可以有效利用的内核数量是有限的。 这就是为什么昂贵的双 Xeon 工作站不再是 Premiere Pro 好的选择的原因之一。 凭借现代 CPU 中可用的核心数量，相对标准的工作站 CPU 将以低得多的成本轻松胜过双 Xeon。</p>
 <h3 id="cpu-premiere-pro">哪种 CPU 最适合 Premiere Pro？</h3>
 <p>适合 Premiere Pro 的最佳 CPU 很大程度上取决于用途和预算。 对于主要使用 H.264 和 H.265 (HEVC) 的工作负载，英特尔的 Core i9 12900K 做得很好——这要归功于其内置的 QuickSync 功能——而且价格非常合理。 另一方面，在处理 RED 素材时，AMD 的 Threadripper Pro 3975WX 和 3995WX 位居榜首。</p>
@@ -193,6 +194,8 @@
 </tr>
 </tbody>
 </table>
+<h3 id="gpu-premiere-pro-1">多个 GPU 会提高 Premiere Pro 的性能吗？</h3>
+<p>虽然 Premiere Pro 在技术上可以一次使用多张卡，但我们发现这样做时性能提升极少。 几乎在每种情况下，你都会看到使用单个高端卡而不是多个低端卡的更高性能。</p>
 <h2 id="section">更多</h2>
 <ul>
 <li><a href="https://www.pugetsystems.com/recommended/Recommended-Systems-for-Adobe-Premiere-Pro-143/Hardware-Recommendations">https://www.pugetsystems.com/recommended/Recommended-Systems-for-Adobe-Premiere-Pro-143/Hardware-Recommendations</a></li>
@@ -265,6 +268,31 @@
                 hljs.highlightElement(el);
             });
         });
+
+
+
+        const topbarRenderer = document.querySelector('.topbar-renderer');
+        let yOffset;
+
+
+        function scroll() {
+            const y = window.pageYOffset;
+            if (yOffset > y) {
+                topbarRenderer.className = "topbar-renderer in";
+            } else if (y > yOffset) {
+                // (y <= 48 && y != 0) ||
+                topbarRenderer.className = "topbar-renderer out";
+            }
+            yOffset = y;
+        }
+
+        window.addEventListener('scroll', evt => {
+            scroll();
+        });
+        window.addEventListener('hashchange', evt => {
+            scroll();
+        })
+        scroll();
     </script>
 </body>
 

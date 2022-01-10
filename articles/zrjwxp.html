@@ -231,6 +231,31 @@
                 hljs.highlightElement(el);
             });
         });
+
+
+
+        const topbarRenderer = document.querySelector('.topbar-renderer');
+        let yOffset;
+
+
+        function scroll() {
+            const y = window.pageYOffset;
+            if (yOffset > y) {
+                topbarRenderer.className = "topbar-renderer in";
+            } else if (y > yOffset) {
+                // (y <= 48 && y != 0) ||
+                topbarRenderer.className = "topbar-renderer out";
+            }
+            yOffset = y;
+        }
+
+        window.addEventListener('scroll', evt => {
+            scroll();
+        });
+        window.addEventListener('hashchange', evt => {
+            scroll();
+        })
+        scroll();
     </script>
 </body>
 
