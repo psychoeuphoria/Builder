@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>用 Illustrator 设计美国队长盾牌 - KingPunch Studio</title>
+    <title>HTML5 播放音乐 - KingPunch Studio</title>
     
     <link rel="stylesheet" href="../R0PdhoKCFEmBy40MbC295rXtUg1GlsRhjQqboZ6sZPk.css">
     <link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@11.4.0/styles/default.min.css">
@@ -139,27 +139,64 @@
                                         <path d="M9.984 6l6 6-6 6-1.406-1.406 4.594-4.594-4.594-4.594z"></path>
                                     </svg>
                                 </div>
-                                <a href="/topics/illustrator">Illustrator</a>
+                                <a href="/topics/web_development">Web开发</a>
                             </li>
 
                         </ul>
                     </div>
-                    <h1>用 Illustrator 设计美国队长盾牌</h1>
+                    <h1>HTML5 播放音乐</h1>
 
-                    <img style="width: 100%;margin: 32px 0" alt="用 Illustrator 设计美国队长盾牌"
-                        src="//static.lucidu.cn/images/20211215-gdbbeh.jpg">
+                    <img style="width: 100%;margin: 32px 0" alt="HTML5 播放音乐"
+                        src="//static.lucidu.cn/images/20220111-uxrmuh.png">
 
-                    <p>完整制作过程，可通过以下的平台在线播放：</p>
+                    <h2 id="section">属性</h2>
 <ul>
-<li><a href="https://www.bilibili.com/video/BV1dF411z7cF/">B站</a></li>
-<li><a href="https://www.youtube.com/watch?v=xExM94mgLFg">Youtube</a></li>
+<li><p><code>autoplay</code></p>
+<p>反映自动播放 HTML 属性的布尔值，指示是否应在有足够媒体可用时不中断的自动开始播放。</p>
+</li>
+<li><p><code>buffered</code></p>
+<p>返回一个 <a href="https://developer.mozilla.org/en-US/docs/Web/API/TimeRanges"><code>TimeRanges</code></a> 对象，该对象指示在访问 <code>buffered</code> 属性时浏览器已缓冲（如果有）的媒体源范围。</p>
+</li>
 </ul>
-<h2 id="section">资源</h2>
+<h2 id="section-1">事件</h2>
 <ul>
-<li>网格渐变</li>
+<li><p><code>durationchange</code></p>
+<p>当持续时间属性更新时触发。</p>
+</li>
+<li><p><code>ended</code></p>
+<p>当到达媒体（<code>&lt;audio&gt;</code> 或 <code>&lt;video&gt;</code>）的结尾或因为没有更多可用数据播放停止时触发。</p>
+</li>
+<li><p><code>error</code></p>
+<p>由于错误无法加载资源时触发。</p>
+</li>
+<li><p><code>pause</code></p>
+<p>当暂停播放的请求被处理并且活动进入暂停状态时触发，常见在 <code>HTMLMediaElement.pause()</code> 方法被调用时触发。</p>
+</li>
+<li><p><code>play</code></p>
+<p>由于 <code>HTMLMediaElement.play()</code> 方法或 <code>autoplay</code> 属性，当 <code>paused</code> 属性从 <code>true</code> 更改为 <code>false</code> 时触发</p>
+</li>
+<li><p><code>playing</code></p>
+<p>在由于缺少数据而暂停或延迟后准备开始播放时触发</p>
+</li>
+<li><p><code>progress</code></p>
+<p>在浏览器加载资源时定期触发。</p>
+</li>
+<li><p><code>timeupdate</code></p>
+<p>当 <code>currentTime</code> 属性指示的时间已更新时触发。</p>
+</li>
 </ul>
-<p>资源下载地址：<a href="https://pan.baidu.com/s/1zZWRNmjnp7NZNOs9upt9DQ">百度网盘</a>，提取码：<code>bsqc</code></p>
-<h2 id="section-1">更多</h2>
+<pre><code class="language-javascript">(function () {
+    console.error([...$0.querySelectorAll('dt code')]
+        .map(x =&gt; `audio.addEventListener(&quot;${x.textContent.trim()}&quot;,evt=&gt;{
+        console.log(&quot;${x.textContent.trim()}&quot;);
+    });`).join('\n'));
+})();
+</code></pre>
+<h2 id="section-2">更多</h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement">https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/TimeRanges">https://developer.mozilla.org/en-US/docs/Web/API/TimeRanges</a></li>
+</ul>
 
 
                     
