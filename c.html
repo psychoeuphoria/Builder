@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <div style="display: flex;flex-direction: column;">
+        <input type="text" id="phone" placeholder="例如：153****3821的动态行程卡">
+        <input type="text" id="location" placeholder="例如：广西省桂林市，湖南省益阳市">
+        <button>提交</button>
+    </div>
+    <script>
+        document.querySelector('button').addEventListener('click', evt => {
+            localStorage.setItem('phone', document.getElementById('phone').value);
+            localStorage.setItem('location', document.getElementById('location').value);
+        })
+    </script>
+</body>
+
+</html>
