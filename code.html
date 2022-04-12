@@ -55,20 +55,35 @@
 
             <div style="background-color: #e4e4e4;height: 1.5px;margin-top: 22px;margin-left: 16px;width: 288px;"></div>
 
-            <div style="margin-left: 16px;width: 288px;padding: 11px 0 12px;color: #94949e;font-family: PingFangSC-Regular;font-size: 17px;line-height: 37px;">
+            <div
+                style="margin-left: 16px;width: 288px;padding: 11px 0 12px;color: #94949e;font-family: PingFangSC-Regular;font-size: 17px;line-height: 37px;">
                 您于前14天内到达或途经：
-                <span style="color: #46464c; font-family: PingFangSC-Semibold;font-size: 17px;line-height: 17px;font-weight: 700;">广西省桂林市，湖南省益阳市</span>
+                <span
+                    style="color: #46464c; font-family: PingFangSC-Semibold;font-size: 17px;line-height: 17px;font-weight: 700;">广西省桂林市，湖南省益阳市</span>
             </div>
 
 
         </div>
-        
-        <div style="height: 12px;margin-top: 8px;color: #fff;font-family: PingFangSC-Regular;font-size: 10px;line-height: 12px;width: 320px;">结果包含您在前14天内到访的国家（地区）与停留4小时以上的国内城市</div>
+
+        <div
+            style="height: 12px;margin-top: 8px;color: #fff;font-family: PingFangSC-Regular;font-size: 10px;line-height: 12px;width: 320px;display: flex;align-items: center;justify-content: center;">
+            结果包含您在前14天内到访的国家（地区）与停留4小时以上的国内城市</div>
+
+        <div
+            style="height: 12px;margin-top: 8px;color: #fff;font-family: PingFangSC-Regular;font-size: 10px;line-height: 12px;width: 320px;display: flex;align-items: center;justify-content: center;">
+            色卡仅对到访地作提醒，不关联健康状况</div>
+
+        <div style="width:320px;flex-direction: row;display: flex;justify-content: center;margin-top: 22px;align-items: center;justify-content: space-between;">
+            <div style="height: 1.5px;background-color: #fff;width: 96px;"></div>
+            <div style="color: #fff;font-family: PingFangSC-Regular;font-size:12px;line-height:16px">本服务联合提供</div>
+            <div style="height: 1.5px;background-color: #e4e4e4;width: 96px;"></div>
+
+        </div>
     </div>
     <script>
         const time = document.getElementById('time');
         const dateTime = new Date();
-        time.textContent = `更新于：${dateTime.getFullYear()}.${dateTime.getMonth() + 1}.${dateTime.getDate()} ${dateTime.getHours().toString().padStart(2,'0')}:${dateTime.getMinutes().toString().padStart(2,'0')}:${dateTime.getSeconds().toString().padStart(2,'0')}`;
+        time.textContent = `更新于：${dateTime.getFullYear()}.${dateTime.getMonth() + 1}.${dateTime.getDate()} ${dateTime.getHours().toString().padStart(2, '0')}:${dateTime.getMinutes().toString().padStart(2, '0')}:${dateTime.getSeconds().toString().padStart(2, '0')}`;
     </script>
 </body>
 
