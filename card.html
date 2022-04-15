@@ -78,7 +78,7 @@
                                         阴性
                                     </div>
                                     <div class="custom-box__body--label">
-                                        <div class="custom-box__body--hours">
+                                        <div class="custom-box__body--hours" id="day">
                                             2
                                         </div>
                                         <div class="custom-box__body--str">
@@ -283,12 +283,12 @@
 
         const cardInfoNormal = document.querySelector('.card-info-normal')
         cardInfoNormal.textContent = localStorage.getItem("card_no") && `证件号码：${localStorage.getItem("card_no")}`
-         || '证件号码：4309**********4231';
+            || '证件号码：4309**********4231';
 
         const cardInfoPhone = document.querySelector('.card-info-phone');
         cardInfoPhone.textContent = localStorage.getItem("card_phone")
-        && `手机号码：${localStorage.getItem("card_phone")}`
-        || '手机号码：153****3821';
+            && `手机号码：${localStorage.getItem("card_phone")}`
+            || '手机号码：153****3821';
 
         const menuItemAction = document.querySelector('.menu-item-action')
         menuItemAction.addEventListener('click', evt => {
@@ -304,7 +304,10 @@
         var t = new Date();
         t.setDate(t.getDate() - 2)
         const customDate = document.querySelector('.custom-box__body--info--date');
-        customDate.textContent = `${(t.getMonth() + 1).toString().padStart(2, '0')}月${t.getDate().toString().padStart(2, '0')}日21时00分检测`
+        customDate.textContent = localStorage.getItem("card_date") || '04月15日21时00分检测';
+
+        document.getElementById('day').textContent=localStorage.getItem("card_day") || '2';
+        //customDate.textContent = `${(t.getMonth() + 1).toString().padStart(2, '0')}月${t.getDate().toString().padStart(2, '0')}日21时00分检测`
     </script>
 </body>
 

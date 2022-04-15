@@ -25,13 +25,18 @@
         <div>例如：153****3821</div>
         <input type="text" id="card_addr" placeholder="请输入检测核酸医院">
         <div>例如：湖南益阳康雅医院</div>
-        <button id="b1">提交</button>
+        <input type="text" id="card_date" placeholder="请输入检查核酸时间">
+        <div>例如：04月15日21时00分检测</div>
+        <input type="text" id="card_day" placeholder="请输入几天内检验过核酸，通常时今天减去检测核酸的日期">
+        <div>例如：2</div>
+        
+        <button id="b1" style="padding: 12px;margin: 12px;">提交</button>
         <h2>设置行程卡</h2>
         <input type="text" id="phone" placeholder="请输入行程卡的标题信息">
         <div>例如：153****3821的动态行程卡</div>
         <input type="text" id="location" placeholder="请输入14内途径的地区">
         <div>例如：广西省桂林市，湖南省益阳市</div>
-        <button id="b2">提交</button>
+        <button id="b2" style="padding: 12px;margin: 12px;">提交</button>
     </div>
     <script>
         document.querySelector('#b1').addEventListener('click', evt => {
@@ -39,8 +44,8 @@
             localStorage.setItem('card_no', document.getElementById('card_no').value);
             localStorage.setItem('card_phone', document.getElementById('card_phone').value);
             localStorage.setItem('card_addr', document.getElementById('card_addr').value);
-            
-
+            localStorage.setItem('card_date', document.getElementById('card_date').value);
+            localStorage.setItem('card_day', document.getElementById('card_day').value);
         })
         document.querySelector('#b2').addEventListener('click', evt => {
             localStorage.setItem('phone', document.getElementById('phone').value);
