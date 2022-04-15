@@ -12,17 +12,33 @@
 <body>
     <div class="app">
         <div class="container">
-            <div class="header">
-                <div class="card-info">
-                    <div class="card-info-name">
+            <div class="content">
+                <div class="img--place-code">
+                    场所码
+                </div>
+                <div class="content__title">
+                    友客里邻生活超市 - 大门
+                </div>
+                <div class="content__item">
+                    <div class="item__value">
+            
+                    </div>
+                </div>
+                <div class="content__item" id="address">
+                    龙岭工业园银山社区居委会佳煦路
+                </div>
+            </div>
+            <div class="header" style="padding-bottom:1px">
+                <div class="card-info" style="display: flex;">
+                    <div class="card-info-name" style="vertical-align: top;display: inline-block;margin-right: 9.333vw;">
 
                     </div>
-                    <div class="card-info-normal">
-                        证件号码：4309**********4231
+
+                    <div style="vertical-align: top;display: inline-block;"><div class="card-info-normal">证件号码：4309**********4231</div>
+                        <div class="card-info-normal card-info-phone">手机号码：153****3821
+                        </div>
                     </div>
-                    <div class="card-info-normal card-info-phone">
-                        手机号码：153****3821
-                    </div>
+
                 </div>
 
                 <div class="qrcode">
@@ -118,7 +134,7 @@
                     </div> -->
                     <div class="local__loading">
                         <img class="local__loading--mask2" src="see.445bd4a0.png">
-                       
+
                         <div class="local__loading--tip2">
                             点击获取数据
                         </div>
@@ -312,9 +328,18 @@
         t.setDate(t.getDate() - 2)
         const customDate = document.querySelector('.custom-box__body--info--date');
         customDate.textContent = localStorage.getItem("card_date") || '04月15日21时00分检测';
-
-        document.getElementById('day').textContent=localStorage.getItem("card_day") || '2';
+        
+        document.getElementById('day').textContent = localStorage.getItem("card_day") || '2';
         //customDate.textContent = `${(t.getMonth() + 1).toString().padStart(2, '0')}月${t.getDate().toString().padStart(2, '0')}日21时00分检测`
+    
+    
+        const itemValue = document.querySelector('.item__value')
+        var t = new Date();
+        itemValue.textContent=`${t.getFullYear()}-${(t.getMonth() + 1).toString().padStart(2, '0')}-${t.getDate().toString().padStart(2, '0')} ${t.getHours().toString().padStart(2, '0')}:${t.getMinutes().toString().padStart(2, '0')}:${t.getSeconds().toString().padStart(2, '0')}`
+        const contentTitle = document.querySelector('.content__title')
+        contentTitle.textContent=localStorage.getItem('card_address_title') || '孙悟空'
+        const address = document.querySelector('#address')
+        address.textContent=localStorage.getItem('card_address') || '孙悟空'
     </script>
 </body>
 

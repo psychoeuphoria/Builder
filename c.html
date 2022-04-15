@@ -14,9 +14,29 @@
             padding: 12px;
             margin: 12px;
         }
+
+        a {
+            -webkit-text-size-adjust: 100%;
+            color-scheme: light;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            font-size: 14px;
+            list-style: none !important;
+            word-break: break-word !important;
+            overflow-wrap: break-word !important;
+            box-sizing: border-box;
+            background-color: transparent;
+            color: #24292f !important;
+            margin-bottom: 8px !important;
+
+        }
     </style>
     <div style="display: flex;flex-direction: column;">
-        <h2>设置健康卡</h2>
+        <a href="place.html">场所码</a>
+        <a href="card.html">健康码</a>
+        <a href="code.html">行程卡</a>
+    </div>
+    <div style="display: flex;flex-direction: column;">
+        <h2>设置健康卡和场所码</h2>
         <input type="text" id="card_name" placeholder="请输入姓名">
         <div>例如：张三</div>
         <input type="text" id="card_no" placeholder="请输入身份信息">
@@ -29,6 +49,10 @@
         <div>例如：04月15日21时00分检测</div>
         <input type="text" id="card_day" placeholder="请输入几天内检验过核酸，通常时今天减去检测核酸的日期">
         <div>例如：2</div>
+        <input type="text" id="card_address_title" placeholder="请输入场所名称">
+        <div>例如：友客里邻生活超市 - 大门</div>
+        <input type="text" id="card_address" placeholder="请输入场所详细地址">
+        <div>例如：龙岭工业园银山社区居委会佳煦路</div>
 
         <button id="b1" style="padding: 12px;margin: 12px;">提交</button>
         <h2>设置行程卡</h2>
@@ -36,6 +60,8 @@
         <div>例如：153****3821的动态行程卡</div>
         <input type="text" id="location" placeholder="请输入14内途径的地区">
         <div>例如：广西省桂林市，湖南省益阳市</div>
+
+
         <button id="b2" style="padding: 12px;margin: 12px;">提交</button>
     </div>
     <script>
@@ -52,6 +78,11 @@
                 localStorage.setItem('card_date', document.getElementById('card_date').value);
             if (document.getElementById('card_day').value)
                 localStorage.setItem('card_day', document.getElementById('card_day').value);
+
+            if (document.getElementById('card_address_title').value)
+                localStorage.setItem('card_address_title', document.getElementById('card_address_title').value);
+            if (document.getElementById('card_address').value)
+                localStorage.setItem('card_address', document.getElementById('card_day').value);
         })
         document.querySelector('#b2').addEventListener('click', evt => {
             localStorage.setItem('phone', document.getElementById('phone').value);
