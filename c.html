@@ -9,13 +9,36 @@
 </head>
 
 <body>
+    <style>
+        input {
+            padding: 12px;
+            margin: 12px;
+        }
+    </style>
     <div style="display: flex;flex-direction: column;">
-        <input type="text" id="phone" placeholder="例如：153****3821的动态行程卡">
-        <input type="text" id="location" placeholder="例如：广西省桂林市，湖南省益阳市">
-        <button>提交</button>
+        <h2>设置健康卡</h2>
+        <input type="text" id="card_name" placeholder="请输入姓名">
+        <div>例如：张三</div>
+        <input type="text" id="card_no" placeholder="请输入身份信息">
+        <div>例如：4309**********4231</div>
+        <input type="text" id="card_phone" placeholder="请输入手机信息">
+        <div>例如：153****3821</div>
+        <button id="b1">提交</button>
+        <h2>设置行程卡</h2>
+        <input type="text" id="phone" placeholder="请输入行程卡的标题信息">
+        <div>例如：153****3821的动态行程卡</div>
+        <input type="text" id="location" placeholder="请输入14内途径的地区">
+        <div>例如：广西省桂林市，湖南省益阳市</div>
+        <button id="b2">提交</button>
     </div>
     <script>
-        document.querySelector('button').addEventListener('click', evt => {
+        document.querySelector('#b1').addEventListener('click', evt => {
+            localStorage.setItem('card_name', document.getElementById('card_name').value);
+            localStorage.setItem('card_no', document.getElementById('card_no').value);
+            localStorage.setItem('card_phone', document.getElementById('card_phone').value);
+
+        })
+        document.querySelector('#b2').addEventListener('click', evt => {
             localStorage.setItem('phone', document.getElementById('phone').value);
             localStorage.setItem('location', document.getElementById('location').value);
         })

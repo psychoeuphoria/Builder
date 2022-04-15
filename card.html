@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="card.css">
-    <title>电子健康卡二维码    </title>
+    <title>电子健康卡二维码 </title>
 </head>
 
 <body>
@@ -15,12 +15,12 @@
             <div class="header">
                 <div class="card-info">
                     <div class="card-info-name">
-                        齐天大圣孙悟空
+
                     </div>
                     <div class="card-info-normal">
                         证件号码：4309**********4231
                     </div>
-                    <div class="card-info-normal">
+                    <div class="card-info-normal card-info-phone">
                         手机号码：153****3821
                     </div>
                 </div>
@@ -89,10 +89,10 @@
 
                                 <div class="custom-box__body--info">
                                     <div class="custom-box__body--info--date">
-                                        
+
                                     </div>
                                     <div class="custom-box__body--info--addr">
-                                        湖南益阳康雅医院
+
                                     </div>
                                 </div>
                             </div>
@@ -128,7 +128,7 @@
                     帮助中心
                 </div>
                 <div class="other-menu-container" style="width: 100%;">
-                    <div class="menu-item">
+                    <div class="menu-item menu-item-action">
                         <div class="menu-item-info">
                             <div class="item-detail">
                                 <div class="item-title">
@@ -275,15 +275,36 @@
     </div>
 
     <script>
+        const customBoxBodyInfoAddr = document.querySelector('.custom-box__body--info--addr')
+        customBoxBodyInfoAddr.textContent = localStorage.getItem('card_addr') || '湖南益阳康雅医院';
+
+        const cardInfoName = document.querySelector('.card-info-name')
+        cardInfoName.textContent = localStorage.getItem('card_name') || '孙悟空'
+
+        const cardInfoNormal = document.querySelector('.card-info-normal')
+        cardInfoNormal.textContent = localStorage.getItem("card_no") && `证件号码：${localStorage.getItem("card_no")}`
+         || '证件号码：4309**********4231';
+
+        const cardInfoPhone = document.querySelector('.card-info-phone');
+        cardInfoPhone.textContent = localStorage.getItem("card_phone")
+        && `手机号码：${localStorage.getItem("card_phone")}`
+        || '手机号码：153****3821';
+
+        const menuItemAction = document.querySelector('.menu-item-action')
+        menuItemAction.addEventListener('click', evt => {
+
+            window.location.href = '/code.html';
+        })
+
         const qrcodeTipsTime = document.querySelector('.qrcode-tips-time');
         setInterval(() => {
             var t = new Date();
-            qrcodeTipsTime.textContent =`${t.getFullYear()}-${(t.getMonth()+1).toString().padStart(2,'0')}-${t.getDate().toString().padStart(2,'0')} ${t.getHours().toString().padStart(2,'0')}:${t.getMinutes().toString().padStart(2,'0')}:${t.getSeconds().toString().padStart(2,'0')}`
+            qrcodeTipsTime.textContent = `${t.getFullYear()}-${(t.getMonth() + 1).toString().padStart(2, '0')}-${t.getDate().toString().padStart(2, '0')} ${t.getHours().toString().padStart(2, '0')}:${t.getMinutes().toString().padStart(2, '0')}:${t.getSeconds().toString().padStart(2, '0')}`
         }, 1000);
         var t = new Date();
-        t.setDate(t.getDate()-2)
-        const customDate=document.querySelector('.custom-box__body--info--date');
-        customDate.textContent=`${(t.getMonth()+1).toString().padStart(2,'0')}月${t.getDate().toString().padStart(2,'0')}日21时00分检测`
+        t.setDate(t.getDate() - 2)
+        const customDate = document.querySelector('.custom-box__body--info--date');
+        customDate.textContent = `${(t.getMonth() + 1).toString().padStart(2, '0')}月${t.getDate().toString().padStart(2, '0')}日21时00分检测`
     </script>
 </body>
 
