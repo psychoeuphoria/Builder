@@ -305,9 +305,7 @@
     </div>
 
     <script>
-        const customBoxBodyInfoAddr = document.querySelector('.custom-box__body--info--addr')
-        customBoxBodyInfoAddr.textContent = localStorage.getItem('card_addr') || '湖南益阳康雅医院';
-
+       
         const cardInfoName = document.querySelector('.card-info-name')
         cardInfoName.textContent = localStorage.getItem('card_name') || '孙悟空'
 
@@ -333,10 +331,6 @@
         }, 1000);
         var t = new Date();
         t.setDate(t.getDate() - 2)
-        const customDate = document.querySelector('.custom-box__body--info--date');
-        customDate.textContent = localStorage.getItem("card_date") || '04月15日21时00分检测';
-        
-        document.getElementById('day').textContent = localStorage.getItem("card_day") || '2';
         //customDate.textContent = `${(t.getMonth() + 1).toString().padStart(2, '0')}月${t.getDate().toString().padStart(2, '0')}日21时00分检测`
     
     
