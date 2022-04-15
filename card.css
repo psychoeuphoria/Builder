@@ -1,0 +1,986 @@
+html {
+    -webkit-locale: "en";
+    margin: 0;
+    padding: 0;
+    line-height: 1.45;
+    font-family: -apple-system, Helvetica, sans-serif;
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    background: #fff;
+    height: 100%;
+    -webkit-tap-highlight-color: transparent;
+    content: "viewport-units-buggyfill; --swiper-navigation-size: 5.867vw";
+    background-color: rgb(255, 255, 255);
+}
+
+body {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    line-height: 1.6;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+}
+
+.app {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+}
+.container {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0 0 4vw;
+    box-sizing: border-box;
+    position: relative;
+    min-height: 100%;
+    background: #f8f8f8;
+    content: "viewport-units-buggyfill; padding-bottom: 4vw";
+}
+.header {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 4.267vw;
+    background: #fff;
+    content: "viewport-units-buggyfill; padding: 4.267vw";
+    user-select: none;
+}
+.card-info {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-weight: 700;
+    font-size: 4.8vw;
+    content: "viewport-units-buggyfill; font-size: 4.8vw";
+}
+.card-info-name {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    font-weight: 700;
+    font-size: 4.8vw;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0 0 1.333vw;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    content: "viewport-units-buggyfill; margin-bottom: 1.333vw";
+}
+.card-info-normal {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    font-weight: 700;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-size: 3.733vw;
+    color: #656565;
+    content: "viewport-units-buggyfill; font-size: 3.733vw";
+}
+.qrcode {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    padding: 5.333vw 0 0;
+    box-sizing: border-box;
+    user-select: none;
+    margin: 0 auto;
+    width: 53.333vw;
+    height: 58.667vw;
+    content: "viewport-units-buggyfill; padding-top: 5.333vw; width: 53.333vw; height: 58.667vw";
+    position: relative;
+}
+.qrcode::before {
+    width: 56.667vw;
+    height: 56.667vw;
+    left: -1.6vw;
+    top: 3.733vw;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "" !important;
+}
+.qrcode-img-body {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    overflow: hidden;
+    position: relative;
+    border-radius: 2.667vw;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    content: "viewport-units-buggyfill; border-radius: 2.667vw";
+}
+
+.qrcode-logo {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    content: normal !important;
+    user-select: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 12vw;
+    height: 12vw;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.qrcode-img {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    content: normal !important;
+    user-select: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 110%;
+    height: 110%;
+}
+.qrcode:after {
+    right: -6.667vw;
+    top: -2.667vw;
+    width: 11.467vw;
+    height: 12.533vw;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "" !important;
+}
+.qrcode-tips {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 3.067vw 0 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    text-align: center;
+    font-size: 3.733vw;
+    color: #999;
+    content: "viewport-units-buggyfill; margin-top: 3.067vw; font-size: 3.733vw";
+}
+.qrcode-tips-content {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-weight: 700;
+    font-size: 4.8vw;
+    color: #333;
+    content: "viewport-units-buggyfill; font-size: 4.8vw";
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.qrcode-tips-label {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    text-align: center;
+    color: #333;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0 2.667vw 0 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-weight: 400;
+    font-size: 4.267vw;
+    content: "viewport-units-buggyfill; font-size: 4.267vw; margin-right: 2.667vw";
+}
+.qrcode-tips-color {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    text-align: center;
+    font-weight: 700;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0 2.667vw 0 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 5.333vw;
+    content: "viewport-units-buggyfill; margin-right: 2.667vw; font-size: 5.333vw";
+    user-select: none;
+    color: rgb(37, 106, 10);
+}
+.qrcode-tips-value {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    text-align: center;
+    font-weight: 700;
+    font-size: 4.8vw;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    color: #7787b9;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.qrcode-tips-time {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #3c6fff;
+    user-select: none;
+    font-weight: 700;
+    font-size: 6.4vw;
+    content: "viewport-units-buggyfill; font-size: 6.4vw";
+}
+.qrcode-tip {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    margin: 3.067vw 0 0;
+    padding: 0;
+    user-select: none;
+    text-align: center;
+    font-size: 3.733vw;
+    color: #999;
+    content: "viewport-units-buggyfill; margin-top: 3.067vw; font-size: 3.733vw";
+    position: relative;
+    list-style: square;
+}
+.custom-box {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    position: relative;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 2.667vw 0;
+    border-top: 1px solid #e6e6e6;
+    min-height: 23.2vw;
+    background-color: #fff;
+    content: "viewport-units-buggyfill; padding: 2.667vw 0; min-height: 23.2vw";
+    user-select: none;
+}
+.custom-box__title {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-box-direction: normal;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0 0 1.333vw 5.333vw;
+    box-sizing: border-box;
+    position: relative;
+    font-weight: 600;
+    font-size: 4.267vw;
+    content: "viewport-units-buggyfill; padding-left: 5.333vw; padding-bottom: 1.333vw; font-size: 4.267vw";
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+.local__reload {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-box-direction: normal;
+    font-weight: 600;
+    font-size: 4.267vw;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: absolute;
+    right: 5.333vw;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    content: "viewport-units-buggyfill; right: 5.333vw";
+    user-select: none;
+}
+.local__reload--mask {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-box-direction: normal;
+    font-weight: 600;
+    font-size: 4.267vw;
+    -webkit-tap-highlight-color: transparent;
+    padding: 0;
+    box-sizing: border-box;
+    content: normal !important;
+    width: 5.333vw;
+    height: 5.333vw;
+    margin: 0.667vw;
+    user-select: none;
+}
+.local__reload--tip {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-box-direction: normal;
+    font-weight: 600;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 3.2vw;
+    white-space: nowrap;
+    color: #092795;
+    content: "viewport-units-buggyfill; font-size: 3.2vw";
+    user-select: none;
+}
+.custom-box__body {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-box-direction: normal;
+    -webkit-tap-highlight-color: transparent;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0 5.333vw;
+    margin: auto 0;
+    content: "viewport-units-buggyfill; padding: 0 5.333vw";
+    user-select: none;
+}
+.hsjc-body {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    width: 100%;
+    user-select: none;
+}
+.hsjc__panel {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-box-direction: normal;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    box-sizing: border-box;
+    padding: 1.333vw 0 0;
+    content: "viewport-units-buggyfill; padding: 1.333vw 0";
+    border-bottom: none;
+    user-select: none;
+}
+.hsjcItem {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-box-direction: normal;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    padding: 1.333vw 0;
+    content: "viewport-units-buggyfill; padding: 1.333vw 0";
+    user-select: none;
+}
+.custom-box__body--result {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-box-direction: normal;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0 8vw 0 0;
+    box-sizing: border-box;
+    display: inline-flex;
+    position: relative;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 24vw;
+    height: 10.667vw;
+    padding: 0.667vw 0.667vw 0.667vw 2.667vw;
+    color: #fff;
+    white-space: nowrap;
+    content: "viewport-units-buggyfill; margin-right: 8vw; width: 24vw; height: 10.667vw; padding: 0.667vw 0.667vw 0.667vw 2.667vw; font-size: 5.333vw";
+    background-color: #236b08;
+    user-select: none;
+}
+.custom-box__body--result-str {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-box-direction: normal;
+    font-size: 5.333vw;
+    color: #fff;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    width: 10vw;
+    content: "viewport-units-buggyfill; width: 10vw";
+    user-select: none;
+}
+.custom-box__body--label {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    color: #fff;
+    white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0 0 0 1.333vw;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 2.667vw;
+    line-height: 1;
+    -webkit-box-flex: 1;
+    flex: 1;
+    content: "viewport-units-buggyfill; font-size: 2.667vw; margin-left: 1.333vw";
+    user-select: none;
+}
+.custom-box__body--hours {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    color: #fff;
+    white-space: nowrap;
+    -webkit-box-direction: normal;
+    line-height: 1;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 6.133vw;
+    font-weight: 500;
+    content: "viewport-units-buggyfill; font-size: 6.133vw";
+    user-select: none;
+}
+.custom-box__body--str {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    color: #fff;
+    white-space: nowrap;
+    -webkit-box-direction: normal;
+    font-size: 2.667vw;
+    line-height: 1;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+.custom-box__body--info {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-box-direction: normal;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    -webkit-box-flex: 1;
+    flex: 1;
+    font-size: 3.733vw;
+    color: #adadad;
+    content: "viewport-units-buggyfill; font-size: 3.733vw";
+    user-select: none;
+}
+.custom-box__body--info--date {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-box-direction: normal;
+    color: #adadad;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    line-height: 1;
+    font-size: 4.267vw;
+    content: "viewport-units-buggyfill; font-size: 4.267vw";
+    user-select: none;
+}
+.custom-box__body--info--addr {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-box-direction: normal;
+    color: #adadad;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0 1.333vw 0 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 3.2vw;
+    content: "viewport-units-buggyfill; font-size: 3.2vw";
+    user-select: none;
+}
+.custom-box__body--empty {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-box-direction: normal;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0 5.333vw 0 0;
+    box-sizing: border-box;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 4vw;
+    color: #adadad;
+    content: "viewport-units-buggyfill; padding-right: 5.333vw; font-size: 4vw";
+    user-select: none;
+}
+.main-menu {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: none;
+    background: #fff;
+    border-top: 1px solid #e6e6e6;
+}
+.menu-container {
+    font-size: 13.333vw;
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: none;
+    background: #fff;
+}
+.menu-container-title {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    box-sizing: border-box;
+    user-select: none;
+    padding: 4.533vw 4vw 3.467vw;
+    width: 100%;
+    background: #f8f8f8;
+    font-size: 3.733vw;
+    color: #999;
+    content: "viewport-units-buggyfill; padding: 4.533vw 4vw 3.467vw 4vw; font-size: 3.733vw";
+}
+.other-menu-container {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    display: flex;
+    flex-wrap: wrap;
+    background: #f8f8f8;
+}
+.menu-item {
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    user-select: none;
+    padding: 5.067vw 4vw;
+    border-right: 1px solid #e6e6e6;
+    border-top: none;
+    border-bottom: 1px solid #e6e6e6;
+    width: 50%;
+    background: #fff;
+    content: "viewport-units-buggyfill; padding: 5.067vw 4vw";
+}
+.menu-item-info {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 4.267vw;
+    color: #333;
+    content: "viewport-units-buggyfill; font-size: 4.267vw";
+    user-select: none;
+    flex: 0 1 auto;
+    overflow: hidden;
+}
+.item-detail {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    font-size: 4.267vw;
+    color: #333;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    max-width: 100%;
+}
+.item-title {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    color: #333;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0 0 0.8vw;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-weight: 700;
+    font-size: 3.733vw;
+    content: "viewport-units-buggyfill; font-size: 3.733vw";
+    max-width: 100%;
+    display: inline-flex;
+    align-items: center;
+}
+.item-desc {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-size: 3.2vw;
+    color: #999;
+    content: "viewport-units-buggyfill; font-size: 3.2vw";
+}
+.menu-item-right {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 3.733vw;
+    color: #999;
+    content: "viewport-units-buggyfill; font-size: 3.733vw";
+    user-select: none;
+}
+.item-arrow {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    color: #999;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0 1.333vw 0 0;
+    padding: 0 0 2.667vw;
+    box-sizing: border-box;
+    height: 1.333vw;
+    line-height: 1.333vw;
+    display: inline-block;
+    font-size: 4.533vw;
+    transform: scale(0.8, 1.4);
+    user-select: none;
+    content: "viewport-units-buggyfill; margin-right: 1.333vw";
+}
+.unbind-btn {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 700;
+    font-size: 5.067vw;
+    color: #3c6fff;
+    width: 94.667vw;
+    height: 13.333vw;
+    line-height: 13.333vw;
+    border-radius: 1.333vw;
+    text-align: center;
+    margin: 5.333vw auto 0;
+    content: "viewport-units-buggyfill; font-size: 5.067vw; width: 94.667vw; height: 13.333vw; line-height: 13.333vw; border-radius: 1.333vw; margin-top: 5.333vw";
+    user-select: none;
+    background: transparent;
+}
+.cardcode-notes {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 6.667vw 0 0;
+    box-sizing: border-box;
+    user-select: none;
+    padding: 0 2.667vw;
+    padding: 0 2.667vw;
+    color: #333;
+    content: "viewport-units-buggyfill; margin-top: 6.667vw; padding: 0 2.667vw; font-size: 3.733vw";
+}
+.notes-title {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    color: #333;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0 0 4vw;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-weight: 700;
+    font-size: 4.267vw;
+    content: "viewport-units-buggyfill; margin-bottom: 4vw; font-size: 4.267vw";
+}
+.notes-content {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    font-size: 3.733vw;
+    color: #333;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0 0 5.333vw;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    content: "viewport-units-buggyfill; margin-bottom: 5.333vw";
+}
+.notes-content-img {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    font-size: 3.733vw;
+    color: #333;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0.8vw 2.667vw 0 0;
+    padding: 0;
+    box-sizing: border-box;
+    content: normal !important;
+    user-select: none;
+    border-radius: 1.333vw;
+    width: 13.2vw;
+    height: 13.2vw;
+    background: #fff;
+}
+.notes-content-div {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    font-size: 3.733vw;
+    color: #333;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-box-flex: 1;
+    flex: 1;
+}
+.footer {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0 2.667vw;
+    font-size: 2.933vw;
+    color: red;
+    content: "viewport-units-buggyfill; padding: 0 2.667vw; font-size: 2.933vw";
+    user-select: none;
+}
+.footer {
+    word-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Segoe UI, Arial, Roboto, PingFang SC, miui, Hiragino Sans GB, Microsoft Yahei, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0 2.667vw;
+    font-size: 2.933vw;
+    color: red;
+    content: "viewport-units-buggyfill; padding: 0 2.667vw; font-size: 2.933vw";
+    user-select: none;
+}.note-img{
+                word-spacing: 1px;
+-webkit-font-smoothing: antialiased;
+line-height: 1.6;
+font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Segoe UI,Arial,Roboto,PingFang SC,miui,Hiragino Sans GB,Microsoft Yahei,sans-serif;
+font-size: 2.933vw;
+color: red;
+-webkit-tap-highlight-color: transparent;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+content: normal!important;
+user-select: none;
+margin-right: 1.333vw;
+width: 5.333vw;
+height: 5.333vw;
+            }

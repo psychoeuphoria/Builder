@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="card.css">
+    <title>电子健康卡二维码    </title>
+</head>
+
+<body>
+    <div class="app">
+        <div class="container">
+            <div class="header">
+                <div class="card-info">
+                    <div class="card-info-name">
+                        齐天大圣孙悟空
+                    </div>
+                    <div class="card-info-normal">
+                        证件号码：4309**********4231
+                    </div>
+                    <div class="card-info-normal">
+                        手机号码：153****3821
+                    </div>
+                </div>
+
+                <div class="qrcode">
+                    <div class="qrcode-img-body">
+                        <img src="logo-b18dcf7bf55c412ec04989061d0512ad.png" alt="" class="qrcode-logo">
+                        <img class="qrcode-img"
+                            src="data:image/png;base64,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">
+                    </div>
+                </div>
+
+                <div class="qrcode-tips">
+                    <div class="qrcode-tips-content">
+                        <div class="qrcode-tips-label">湖南</div>
+                        <div class="qrcode-tips-color">
+                            绿码
+                        </div>
+                        <div class="qrcode-tips-label">外省</div>
+                        <div class="qrcode-tips-value">
+                            未查验
+                        </div>
+                    </div>
+
+                    <div class="qrcode-tips-time">
+                        2022-04-15 14:42:09
+                    </div>
+
+                </div>
+
+                <div class="qrcode-tip">
+
+                </div>
+
+
+            </div>
+
+            <div class="custom-box">
+                <div class="custom-box__title">
+                    <span>核酸检测</span>
+                    <div class="local__reload">
+                        <img src="https://jkkgzh.hnhfpc.gov.cn/hunan/img/see.445bd4a0.png" class="local__reload--mask">
+                        <div class="local__reload--tip">
+                            点击获取最新数据
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-box__body">
+                    <div class="hsjc-body">
+                        <div class="hsjc__panel">
+                            <div class="hsjcItem">
+                                <div class="custom-box__body--result">
+                                    <div class="custom-box__body--result-str">
+                                        阴性
+                                    </div>
+                                    <div class="custom-box__body--label">
+                                        <div class="custom-box__body--hours">
+                                            2
+                                        </div>
+                                        <div class="custom-box__body--str">
+                                            日内
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="custom-box__body--info">
+                                    <div class="custom-box__body--info--date">
+                                        
+                                    </div>
+                                    <div class="custom-box__body--info--addr">
+                                        湖南益阳康雅医院
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-box">
+                <div class="custom-box__title">
+                    <span>新冠疫苗</span>
+                    <div class="local__reload">
+                        <img src="https://jkkgzh.hnhfpc.gov.cn/hunan/img/see.445bd4a0.png" class="local__reload--mask">
+                        <div class="local__reload--tip">
+                            点击获取最新数据
+                        </div>
+                    </div>
+                </div>
+
+                <div class="custom-box__body">
+                    <div class="custom-box__body--empty">
+                        查询相关数据
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-menu">
+
+            </div>
+
+            <div class="menu-container">
+                <div class="menu-container-title">
+                    帮助中心
+                </div>
+                <div class="other-menu-container" style="width: 100%;">
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="item-detail">
+                                <div class="item-title">
+                                    <div style="flex: 0 0 auto; margin-right: 5px;margin-bottom: 0;">
+                                        通信大数据行程卡
+                                    </div>
+                                </div>
+                                <div class="item-desc">
+                                    疫情防控人人有责
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-right">
+                            <span class="item-arrow"> > </span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="item-detail">
+                                <div class="item-title">
+                                    <div style="flex: 0 0 auto; margin-right: 5px;margin-bottom: 0;">
+                                        国家政务服务平台
+                                    </div>
+                                </div>
+                                <div class="item-desc">
+                                    健康证明跨省市互通
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-right">
+                            <span class="item-arrow"> > </span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="item-detail">
+                                <div class="item-title">
+                                    <div style="flex: 0 0 auto; margin-right: 5px;margin-bottom: 0;">
+                                        健康账户
+                                    </div>
+                                </div>
+                                <div class="item-desc">
+                                    申领电子健康账户
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-right">
+                            <span class="item-arrow"> > </span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="item-detail">
+                                <div class="item-title">
+                                    <div style="flex: 0 0 auto; margin-right: 5px;margin-bottom: 0;">
+                                        诊间支付(试点)
+                                    </div>
+                                </div>
+                                <div class="item-desc">
+                                    基层医疗门诊缴费
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-right">
+                            <span class="item-arrow"> > </span>
+                        </div>
+                    </div>
+
+                    <div class="menu-item">
+                        <div class="menu-item-info">
+                            <div class="item-detail">
+                                <div class="item-title">
+                                    <div style="flex: 0 0 auto; margin-right: 5px;margin-bottom: 0;">
+                                        管理健康卡
+                                    </div>
+                                </div>
+                                <div class="item-desc">
+                                    管理健康卡
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="menu-item-right">
+                            <span class="item-arrow"> > </span>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+            <div class="unbind-btn">
+                解绑此卡
+            </div>
+            <div class="cardcode-notes">
+                <div class="notes-title">
+                    温馨提示：
+                </div>
+
+                <div class="notes-content">
+                    <img class="notes-content-img" src="code-red-3c12d9761b32ffbdc3e8e8ce553e8449.png" alt="">
+                    <div class="notes-content-div">
+                        持红码人员。请勿出行，第一时间向所在地社区或县级疾控中心主动报告，做好自我隔离，等待工作人员上门进行流行病学调查。经调查确认为高风险者，请在定点医疗机构或集中隔离场所进行诊疗或隔离医学观察。如流调后发现赋码错误可申请改码。健康码查验单位发现红码人员，请在第一时间报告所在地社区或县级疾控中心。
+                    </div>
+                </div>
+
+                <div class="notes-content">
+                    <img class="notes-content-img" src="code-yellow-164dd85a5a378007a8130efa1db6cb81.png" alt="">
+                    <div class="notes-content-div">
+                        持黄码人员。第一时间向所在地社区主动报告。每天主动健康监测、定期核酸检测并向社区报告相关情况。本人或共同居住者出现发热、咳嗽等新冠肺炎十大新冠肺炎症状，应立即向社区报告，及时到定点医疗机构排查。在未排除感染风险前原则上不外出，确需出行的，须持48小时内核酸检测阴性证明。<span
+                            style="color: red;">原则上在家办公、不上学等。不得参加</span>聚餐、会展、旅游、培训等聚集性活动，<span
+                            style="color: red;">不得</span>进入学校、养老院、福利院等特定机构，<span
+                            style="color: red;">不得</span>进入农产品批发市场、农贸市场和超市，<span
+                            style="color: red;">不得</span>进入图书馆、博物馆、美术馆、展览馆、健身馆等室内场馆，<span
+                            style="color: red;">不得</span>进入影剧院、歌舞厅、浴室、网吧等密闭场所，<span
+                            style="color: red;">不得</span>乘坐出租车、网约车、公共汽车、地铁、火车等公共交通工具，非本人就诊需要不进入医疗机构。必要外出时，如领取生活物资、快递或参加非聚集性活动，须做好个人防护。
+                    </div>
+                </div>
+
+                <div class="notes-content">
+                    <img class="notes-content-img" src="code-green-64c9b5ddb9932f9f3cea748c3db25990.png" alt="">
+                    <div class="notes-content-div">
+                        持绿码人员。可正常出行，近14天内有高、中风险地区或疫情严重地区旅居史者，或发现通行行程卡带*号，须向社区主动报备，做好自我监测，入湘后24小时内进行一次核酸检测。 </div>
+                </div>
+
+
+            </div>
+
+            <div class="footer">
+                <img class="note-img" src="note-4c1d024ad82becb246a75d136a8e944f.png">
+                <div>如健康卡注册的手机号码与健康卡实际使用人不一致将产生误判
+                    <div>请妥善保管二维码信息，以防他人窃取</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const qrcodeTipsTime = document.querySelector('.qrcode-tips-time');
+        setInterval(() => {
+            var t = new Date();
+            qrcodeTipsTime.textContent =`${t.getFullYear()}-${(t.getMonth()+1).toString().padStart(2,'0')}-${t.getDate().toString().padStart(2,'0')} ${t.getHours().toString().padStart(2,'0')}:${t.getMinutes().toString().padStart(2,'0')}:${t.getSeconds().toString().padStart(2,'0')}`
+        }, 1000);
+        var t = new Date();
+        t.setDate(t.getDate()-2)
+        const customDate=document.querySelector('.custom-box__body--info--date');
+        customDate.textContent=`${(t.getMonth()+1).toString().padStart(2,'0')}月${t.getDate().toString().padStart(2,'0')}日21时00分检测`
+    </script>
+</body>
+
+</html>
